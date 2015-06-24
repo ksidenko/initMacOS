@@ -46,6 +46,7 @@ brew cask install gpgtools
 brew cask install licecap
 brew cask install utorrent
 brew cask install evernote
+brew cask install libreoffice
 
 # Not on cask but I want regardless.
 
