@@ -47,6 +47,13 @@ brew cask install licecap
 brew cask install utorrent
 brew cask install evernote
 brew cask install libreoffice
+brew cask install picasa
+
+#install R software
+brew tap homebrew/science
+brew install gcc
+brew install Caskroom/cask/xquartz
+brew install r
 
 # Not on cask but I want regardless.
 
