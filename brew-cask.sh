@@ -14,8 +14,8 @@ brew tap caskroom/versions
 brew cask install spectacle
 brew cask install dropbox
 #brew cask install gyazo
-brew cask install onepassword
-brew cask install rescuetime
+#brew cask install onepassword
+#brew cask install rescuetime
 brew cask install flux
 
 # dev
@@ -28,7 +28,7 @@ brew cask install phpstorm #v8.0.3
 
 # fun
 #brew cask install limechat
-brew cask install miro-video-converter
+#brew cask install miro-video-converter
 #brew cask install horndis               # usb tethering
 
 # browsers
@@ -42,11 +42,11 @@ brew cask install miro-video-converter
 #brew cask install disk-inventory-x
 #brew cask install screenflow4 # 4 specifically not 5.
 brew cask install vlc
-brew cask install gpgtools
-brew cask install licecap
+#brew cask install gpgtools
+#brew cask install licecap
 brew cask install utorrent
 brew cask install evernote
-brew cask install libreoffice
+#brew cask install libreoffice
 brew cask install picasa
 
 #install R software
