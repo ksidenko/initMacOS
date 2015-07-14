@@ -1,0 +1,43 @@
+" https://raw.githubusercontent.com/spf13/spf13-vim/3.0/.vimrc
+
+let mapleader = ','
+
+Plugin 'scrooloose/nerdtree'
+autocmd VimEnter * NERDTree
+let NERDTreeShowBookmarks=1
+let NERDTreeShowLineNumbers = 1
+let NERDTreeWinSize = 45
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+"map <leader>f :NERDTreeFind<CR>
+
+Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-fugitive'
+
+" color schemas
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'morhetz/gruvbox'
+"Plugin 'garybernhardt/dotfiles', {'rtp': '.vim/colors'}
+
+Plugin 'lyokha/vim-xkbswitch'
+let g:XkbSwitchEnabled = 1
+let g:XkbSwitchLib = '/usr/local/lib/libInputSourceSwitcher.dylib'
+let g:XkbSwitchSkipFt = [ 'nerdtree' ]
+
+" Common parametrs
+set mouse=a
+
+syntax enable
+set background=dark
+colorscheme gruvbox
+
+Plugin 'lpenz/vimcommander'
+"map <silent> <F11> :cal VimCommanderToggle()<CR>
+
+" Allow backspacing over autoindent, line breaks and start of insert action
+set backspace=indent,eol,start
+
+Plugin 'easymotion/vim-easymotion'
+map <Leader> <Plug>(easymotion-prefix)
+
