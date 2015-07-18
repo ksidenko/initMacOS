@@ -41,3 +41,7 @@ set backspace=indent,eol,start
 Plugin 'easymotion/vim-easymotion'
 map <Leader> <Plug>(easymotion-prefix)
 
+set hls
+set nrformats=
+
+Plugin 'neilagabriel/vim-geeknote'
