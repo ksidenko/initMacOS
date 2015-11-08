@@ -1,0 +1,30 @@
+Plugin 'lyokha/vim-xkbswitch'
+let g:XkbSwitchEnabled = 1
+let g:XkbSwitchLib = '/usr/local/lib/libInputSourceSwitcher.dylib'
+let g:XkbSwitchSkipFt = [ 'nerdtree' ]
+
+""Plugin 'garybernhardt/dotfiles', {'rtp': '.vim/colors'}
+
+"Plugin 'lpenz/vimcommander'
+"""map <silent> <F11> :cal VimCommanderToggle()<CR>
+
+"Plugin 'neilagabriel/vim-geeknote'
+"
+""Plugin 'ivalkeen/nerdtree-execute'
+
+autocmd VimEnter * NERDTree
+let NERDTreeShowBookmarks=1
+let NERDTreeShowLineNumbers = 1
+let NERDTreeShowHidden=1
+let NERDTreeWinSize = 45
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+let NERDTreeChDirMode=1
+let NERDTreeQuitOnOpen=1
+let NERDTreeMouseMode=2
+
+let g:airline#extensions#tabline#enabled = 1
+
+
+"Plugin 'benmills/vimux'
+

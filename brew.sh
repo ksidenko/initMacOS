@@ -36,6 +36,7 @@ brew install wget --enable-iri
 # Install more recent versions of some OS X tools
 brew install vim --override-system-vi --with-lua 
 brew install tmux
+brew install ctags
 brew install homebrew/dupes/grep
 brew install homebrew/dupes/screen
 

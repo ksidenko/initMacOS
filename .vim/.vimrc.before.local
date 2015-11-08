@@ -1,0 +1,4 @@
+let g:spf13_clear_search_highlight = 1
+
+let g:spf13_bundle_groups=['general', 'writing', 'neocomplete', 'programming', 'php', 'python', 'javascript', 'html', 'misc']
+
