@@ -1,4 +1,4 @@
-!# /usr/bin/env bash
+#!/usr/bin/env bash
 
 # Install fink http://www.finkproject.org/download/srcdist.php
 
