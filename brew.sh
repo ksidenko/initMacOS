@@ -51,6 +51,9 @@ brew install gh
 # mtr - ping & traceroute. best.
 brew install mtr
 
+# add support ntfs https://gist.github.com/crcastle/5aa97cbce28bf3ff5d1a
+brew install Caskroom/cask/osxfuse
+brew install ntfs-3g
 
 # Install other useful binaries
 brew install ack
