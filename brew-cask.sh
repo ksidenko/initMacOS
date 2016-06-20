@@ -17,6 +17,8 @@ brew cask install dropbox
 #brew cask install onepassword
 #brew cask install rescuetime
 brew cask install flux
+# https://github.com/toland/qlmarkdown
+brew cask install qlmarkdown
 
 # dev
 brew cask install iterm2
