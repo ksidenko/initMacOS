@@ -1,8 +1,0 @@
-set background=dark
-"set background=light
-
-colorscheme solarized
-"colorscheme gruvbox
-
-"set autowrite
-set wrap linebreak nolist
