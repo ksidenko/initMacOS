@@ -1,17 +1,19 @@
 #!/usr/bin/env bash
 
-# Install fink http://www.finkproject.org/download/srcdist.php
+lnif() {
+    if [ -e "$1" ]; then
+        ln -sf "$1" "$2"
+    fi
+    ret="$?"
+}
 
-xcode-select --install
-sudo xcodebuild -license
+source_path="$HOME/initMacOS"
+target_path="$HOME"
 
-curl -L http://downloads.sourceforge.net/fink/fink-0.39.2.tar.gz > fink-lastversion.tar.gz
-tar -xvf fink-lastversion.tar.gz
-cd fink-lastversion
-./bootstrap
+lnif "$source_path/.bash_profile" "$target_path/.bash_profile"
 
-/sw/bin/pathsetup.sh
+curl -L https://raw.githubusercontent.com/docker/docker/master/contrib/completion/bash/docker > .docker-completion.sh && chmod +x .docker-completion.sh
+lnif "$source_path/.docker-completion.sh" "$target_path/.docker-completion.sh"
 
-fink selfupdate-rsync
-fink index -f
-
+curl -L https://raw.githubusercontent.com/docker/compose/1.7.0/contrib/completion/bash/docker-compose > .docker-compose-completion.sh && chmod +x .docker-compose-completion.sh
+lnif "$source_path/.docker-compose-completion.sh" "$target_path/.docker-compose-completion.sh"
