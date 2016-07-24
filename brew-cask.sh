@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-# to maintain cask .... 
+# to maintain cask ....
 #     brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup` 
 
 
@@ -23,8 +23,8 @@ brew cask install qlmarkdown
 # dev
 brew cask install iterm2
 brew cask install sublime-text
-brew cask install caskroom/homebrew-versions/java6
-brew cask install phpstorm #v8.0.3
+#brew cask install caskroom/homebrew-versions/java6
+#brew cask install phpstorm #v8.0.3
 #brew cask install imagealpha
 #brew cask install imageoptim
 
