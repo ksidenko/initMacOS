@@ -26,6 +26,10 @@ brew install bash
 #   github.com/Homebrew/homebrew/blob/master/Library/Formula/bash-completion.rb#L3-L4
 brew tap homebrew/versions
 brew install homebrew/versions/bash-completion2
+cd $(brew --prefix)/etc/bash_completion.d
+ln -s /Applications/Docker.app/Contents/Resources/etc/docker.bash-completion
+ln -s /Applications/Docker.app/Contents/Resources/etc/docker-machine.bash-completion
+ln -s /Applications/Docker.app/Contents/Resources/etc/docker-compose.bash-completion
 
 # generic colouriser  http://kassiopeia.juls.savba.sk/~garabik/software/grc/
 brew install grc
@@ -66,6 +70,7 @@ brew install tree
 brew install zopfli
 brew install ffmpeg --with-libvpx
 brew install ncdu
+brew install jq
 
 brew install terminal-notifier
 

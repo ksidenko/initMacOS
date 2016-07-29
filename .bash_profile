@@ -224,6 +224,8 @@ alias mountReadWrite='/sbin/mount -uw /'    # mountReadWrite:   For use when boo
 #   -------------------------------------------------------------------
     alias cleanupDS="find . -type f -name '*.DS_Store' -ls -delete"
 
+    alias flushdns='sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder'
+
 #   finderShowHidden:   Show hidden files in Finder
 #   finderHideHidden:   Hide hidden files in Finder
 #   -------------------------------------------------------------------
@@ -263,14 +265,6 @@ alias deis-prod-m1='DEIS_PROFILE=production-m1 /Users/k.sidenko/.config/2gis/dei
 
 eval $(docker-machine env)
 
-if [ -f ~/.git-completion.bash  ]; then
-    . ~/.git-completion.bash
-fi
-
-if [ -f ~/.docker-completion.sh ]; then
-    . ~/.docker-completion.sh
-fi
-
-if [ -f ~/.docker-compose-completion.sh ]; then
-    . ~/.docker-compose-completion.sh
+if [ -f $(brew --prefix)/etc/bash_completion.d ]; then
+. $(brew --prefix)/etc/bash_completion.d
 fi
