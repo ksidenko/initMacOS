@@ -56,6 +56,7 @@ brew install gh
 brew install mtr
 
 # add support ntfs https://gist.github.com/crcastle/5aa97cbce28bf3ff5d1a
+# manual support http://macdrug.com/free-ntfs-read-and-write-solutions-in-mac-os-x-el-capitan-or-older/
 brew install Caskroom/cask/osxfuse
 brew install ntfs-3g
 
