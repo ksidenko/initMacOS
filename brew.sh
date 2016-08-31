@@ -1,5 +1,7 @@
 #!/bin/bash
 
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
 # Install command-line tools using Homebrew
 
 # Make sure we’re using the latest Homebrew
@@ -24,12 +26,23 @@ brew install gnu-sed --default-names
 brew install bash
 # regular bash-completion package is held back to an older release, so we get latest from versions.
 #   github.com/Homebrew/homebrew/blob/master/Library/Formula/bash-completion.rb#L3-L4
-brew tap homebrew/versions
-brew install homebrew/versions/bash-completion2
-cd $(brew --prefix)/etc/bash_completion.d
-ln -s /Applications/Docker.app/Contents/Resources/etc/docker.bash-completion
-ln -s /Applications/Docker.app/Contents/Resources/etc/docker-machine.bash-completion
-ln -s /Applications/Docker.app/Contents/Resources/etc/docker-compose.bash-completion
+#brew tap homebrew/versions
+#brew install homebrew/versions/bash-completion2
+#cd $(brew --prefix)/etc/bash_completion.d
+#ln -s /Applications/Docker.app/Contents/Resources/etc/docker.bash-completion
+#ln -s /Applications/Docker.app/Contents/Resources/etc/docker-machine.bash-completion
+#ln -s /Applications/Docker.app/Contents/Resources/etc/docker-compose.bash-completion
+brew install bash-completion
+files=(docker-machine docker-machine-wrapper docker-machine-prompt)
+for f in "${files[@]}"; do
+    curl -L https://raw.githubusercontent.com/docker/machine/v$(docker-machine --version | tr -ds ',' ' ' | awk 'NR==1{print $(3)}')/contrib/completion/bash/$f.bash > `brew --prefix`/etc/bash_completion.d/$f
+done
+
+brew install homebrew/completions/docker-completion
+brew install homebrew/completions/docker-compose-completion
+#curl -L https://raw.githubusercontent.com/docker/compose/$(docker-compose version --short)/contrib/completion/bash/docker-compose > `brew --prefix`/etc/bash_completion.d/docker-compose
+#brew install homebrew/completions/docker-machine-completion
+brew install homebrew/completions/brew-cask-completion
 
 # generic colouriser  http://kassiopeia.juls.savba.sk/~garabik/software/grc/
 brew install grc
@@ -43,7 +56,6 @@ brew install tmux
 brew install ctags
 brew install homebrew/dupes/grep
 brew install homebrew/dupes/screen
-
 
 # run this script when this file changes guy.
 brew install entr
