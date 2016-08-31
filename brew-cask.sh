@@ -23,6 +23,10 @@ brew cask install qlmarkdown
 # dev
 brew cask install iterm2
 brew cask install sublime-text
+brew cask install docker-toolbox
+open $(brew --prefix)/Caskroom/docker-toolbox/1.12.0/DockerToolbox-1.12.0.pkg
+open https://docs.docker.com/toolbox/toolbox_install_mac/
+bash '/Applications/Docker/Docker Quickstart Terminal.app/Contents/Resources/Scripts/start.sh'
 #brew cask install caskroom/homebrew-versions/java6
 #brew cask install phpstorm #v8.0.3
 #brew cask install imagealpha
@@ -34,6 +38,8 @@ brew cask install sublime-text
 #brew cask install horndis               # usb tethering
 
 # browsers
+brew cask install google-chrome
+brew cask install google-photos-backup
 #brew cask install google-chrome-canary
 #brew cask install firefox-nightly
 #brew cask install webkit-nightly
