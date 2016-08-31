@@ -268,3 +268,8 @@ eval $(docker-machine env)
 if [ -f $(brew --prefix)/etc/bash_completion.d ]; then
 . $(brew --prefix)/etc/bash_completion.d
 fi
+if [ -f $(brew --prefix)/etc/bash_completion  ]; then
+    . $(brew --prefix)/etc/bash_completion
+fi
+
+set -o vi
