@@ -28,6 +28,7 @@
 #   ------------------------------------------------------------
     export GOPATH=$HOME/golang_project
     export PATH=$PATH:$GOPATH/bin
+    export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 
 #   Set Default Editor (change 'Nano' to the editor of your choice)
 #   ------------------------------------------------------------

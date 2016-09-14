@@ -96,6 +96,7 @@ brew install cmake
 
 #devel
 brew install psqlodbc
+brew install coreutil
 
 # Remove outdated versions from the cellar
 brew cleanup
