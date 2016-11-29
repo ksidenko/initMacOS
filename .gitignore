@@ -1,4 +1,5 @@
 .vim/spf13-vim.sh
 .docker-completion.sh
 .docker-compose-completion.sh
+tmux-sessions/*
 
