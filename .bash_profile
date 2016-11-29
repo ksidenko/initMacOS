@@ -29,6 +29,8 @@
     export GOPATH=$HOME/golang_project
     export PATH=$PATH:$GOPATH/bin
     export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+    export PATH="/usr/local/sbin:$PATH"
+    export PATH="$HOME/.yarn/bin:$PATH"
 
 #   Set Default Editor (change 'Nano' to the editor of your choice)
 #   ------------------------------------------------------------
@@ -264,6 +266,16 @@ alias deis='DEIS_PROFILE=dev /Users/k.sidenko/.config/2gis/deis-client-dev'
 alias deis-prod-n1='DEIS_PROFILE=production-n1 /Users/k.sidenko/.config/2gis/deis-client-prod-n1'
 alias deis-prod-m1='DEIS_PROFILE=production-m1 /Users/k.sidenko/.config/2gis/deis-client-prod-m1'
 
+alias dockviz='docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock nate/dockviz'
+alias dockviz-tree='dockviz images -t'
+alias dockviz-tree-inc='dockviz images -t -i'
+alias dockviz-tree-labeled='dockviz images -t -l'
+alias docker-rmi-dangling='docker images -f dangling=true -q | xargs docker rmi -f'
+alias docker-rm-stopped='docker ps -f exited=1 -q | xargs docker rm -f'
+
+if [[ $(docker-machine active | grep default | wc -l) -eq 0 ]]; then
+    docker-machine start default
+fi
 eval $(docker-machine env)
 
 if [ -f $(brew --prefix)/etc/bash_completion.d ]; then
@@ -274,3 +286,4 @@ if [ -f $(brew --prefix)/etc/bash_completion  ]; then
 fi
 
 set -o vi
+
