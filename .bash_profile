@@ -273,6 +273,10 @@ alias dockviz-tree-labeled='dockviz images -t -l'
 alias docker-rmi-dangling='docker images -f dangling=true -q | xargs docker rmi -f'
 alias docker-rm-stopped='docker ps -f exited=1 -q | xargs docker rm -f'
 
+alias ssh_shared_runner_1='ssh -p 2222 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no root@10.54.28.144'
+alias ssh_shared_runner_2='ssh -p 2222 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no root@10.54.28.220'
+alias open-shared-runner-pipeline='open https://gitlab.2gis.ru/webapi/gitlab-ci-cron/pipelines/new'
+
 if [[ $(docker-machine active | grep default | wc -l) -eq 0 ]]; then
     docker-machine start default
 fi
