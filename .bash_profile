@@ -262,10 +262,10 @@ httpHeaders () { /usr/bin/curl -I -L $@ ; }             # httpHeaders:      Grab
 alias ssh_vm_sks="ssh ubuntu@sks.webapi.ostack.test"
 alias goproj="cd ~/golang_project/src/gitlab.2gis.ru/photo/embassy2/"
 
-alias deis='DEIS_PROFILE=dev /Users/k.sidenko/.config/2gis/deis-client-dev'
-alias deis-prod-n3='DEIS_PROFILE=production-n3 /Users/k.sidenko/.config/2gis/deis-client-prod-n3'
-alias deis-prod-m1='DEIS_PROFILE=production-m1 /Users/k.sidenko/.config/2gis/deis-client-prod-m1'
-alias deis2='DEIS_PROFILE=v2-staging /home/k.sidenko/.config/2gis/deis-client-v2-staging'
+alias deis='DEIS_PROFILE=dev ~/.config/2gis/deis-client-dev'
+alias deis-prod-n3='DEIS_PROFILE=production-n3 ~/.config/2gis/deis-client-prod-n3'
+alias deis-prod-m1='DEIS_PROFILE=production-m1 ~/.config/2gis/deis-client-prod-m1'
+alias deis2='DEIS_PROFILE=v2-staging ~/.config/2gis/deis-client-v2-staging'
 
 alias dockviz='docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock nate/dockviz'
 alias dockviz-tree='dockviz images -t'
