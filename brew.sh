@@ -52,6 +52,7 @@ brew install wget --enable-iri
 
 # Install more recent versions of some OS X tools
 brew install vim --override-system-vi --with-lua 
+brew install reattach-to-user-namespace
 brew install tmux
 brew install ctags
 brew install homebrew/dupes/grep
