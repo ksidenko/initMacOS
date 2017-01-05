@@ -277,6 +277,9 @@ alias docker-rm-stopped='docker ps -f status=exited -q | xargs docker rm -f'
 alias ssh_shared_runner_1='ssh -p 2222 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no root@10.54.28.144'
 alias ssh_shared_runner_2='ssh -p 2222 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no root@10.54.28.220'
 alias open-shared-runner-pipeline='open https://gitlab.2gis.ru/webapi/gitlab-ci-cron/pipelines/new'
+alias docker-env='eval $(docker-machine env)'
+
+set -o vi
 
 if [[ $(docker-machine active | grep default | wc -l) -eq 0 ]]; then
     docker-machine start default
@@ -284,11 +287,10 @@ fi
 eval $(docker-machine env)
 
 if [ -f $(brew --prefix)/etc/bash_completion.d ]; then
-. $(brew --prefix)/etc/bash_completion.d
+    . $(brew --prefix)/etc/bash_completion.d
 fi
 if [ -f $(brew --prefix)/etc/bash_completion  ]; then
     . $(brew --prefix)/etc/bash_completion
 fi
 
-set -o vi
 
