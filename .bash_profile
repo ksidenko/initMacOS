@@ -267,12 +267,17 @@ alias deis-prod-n3='DEIS_PROFILE=production-n3 ~/.config/2gis/deis-client-prod-n
 alias deis-prod-m1='DEIS_PROFILE=production-m1 ~/.config/2gis/deis-client-prod-m1'
 alias deis2='DEIS_PROFILE=v2-staging ~/.config/2gis/deis-client-v2-staging'
 
+alias docker-gc="docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -v /etc:/etc spotify/docker-gc"
+
 alias dockviz='docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock nate/dockviz'
 alias dockviz-tree='dockviz images -t'
 alias dockviz-tree-inc='dockviz images -t -i'
 alias dockviz-tree-labeled='dockviz images -t -l'
+
+alias docker-ps-rm="docker ps -a -q | xargs docker rm"
 alias docker-rmi-dangling='docker images -f dangling=true -q | xargs docker rmi -f'
 alias docker-rm-stopped='docker ps -f status=exited -q | xargs docker rm -f'
+
 alias ssh_shared_runner_1='ssh -p 2222 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no root@10.54.28.144'
 alias ssh_shared_runner_2='ssh -p 2222 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no root@10.54.28.220'
 alias open-shared-runner-pipeline='open https://gitlab.2gis.ru/webapi/gitlab-ci-cron/pipelines/new'
