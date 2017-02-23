@@ -288,16 +288,16 @@ if [ -f $(brew --prefix)/etc/bash_completion  ]; then
     . $(brew --prefix)/etc/bash_completion
 fi
 
-if [[ -z "$TMUX" ]]; then
-    if tmux has-session 2>/dev/null; then
-        #echo "skip exec tmux attach"
-        tmux new-session
-    else
-        exec tmux
-    fi
-fi
+#if [[ -z "$TMUX" ]]; then
+    #if tmux has-session 2>/dev/null; then
+        ##echo "skip exec tmux attach"
+        #tmux new-session
+    #else
+        #exec tmux
+    #fi
+#fi
 
-if [[ $(docker-machine active | grep default | wc -l) -eq 0 ]]; then
-    docker-machine start default
-fi
-eval $(docker-machine env)
+#if [[ $(docker-machine active | grep default | wc -l) -eq 0 ]]; then
+    #docker-machine start default
+#fi
+#eval $(docker-machine env)
