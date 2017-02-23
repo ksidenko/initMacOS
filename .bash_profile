@@ -284,6 +284,11 @@ alias open-shared-runner-pipeline='open https://gitlab.2gis.ru/webapi/gitlab-ci-
 
 alias docker-env='eval $(docker-machine env)'
 
+eval "$(ssh-agent -s)" 1>/dev/null
+ssh-add -K ~/.ssh/id_rsa_2gis_github &>/dev/null
+ssh-add -K ~/.ssh/id_rsa_2gis_gitlab &>/dev/null
+# ssh -T git@github.com
+
 set -o vi
 
 if [ -f $(brew --prefix)/etc/bash_completion.d ]; then
