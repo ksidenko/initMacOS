@@ -299,6 +299,8 @@ if [ -f $(brew --prefix)/etc/bash_completion  ]; then
     . $(brew --prefix)/etc/bash_completion
 fi
 
+source <(kubectl completion bash)
+
 #if [[ -z "$TMUX" ]]; then
     #if tmux has-session 2>/dev/null; then
         ##echo "skip exec tmux attach"
