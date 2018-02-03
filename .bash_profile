@@ -314,3 +314,6 @@ source <(kubectl completion bash)
     #docker-machine start default
 #fi
 #eval $(docker-machine env)
+
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
