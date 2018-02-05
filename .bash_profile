@@ -299,6 +299,11 @@ alias kube-prod-n3-webapi='kubectl --context="production-n3-webapi"'
 alias kube-prod-d1-webapi='kubectl --context="production-d1-webapi"'
 
 alias kube-market='kubectl --context="staging-market"'
+#if [[ $(ps ax | grep -v grep | grep ssh-agent | wc -l) -eq 0 ]]; then
+    #eval "$(ssh-agent -s)" 1>/dev/null
+    #ssh-add -K ~/.ssh/id_rsa_2gis_gitlab &>/dev/null
+    ## ssh -T git@github.com
+#fi
 
 set -o vi
 
@@ -326,3 +331,19 @@ source <(kubectl completion bash)
 #eval $(docker-machine env)
 
 export PATH=${PATH}:/User/k.sidenko/platform-tools
+
+#if [[ -z "$TMUX" ]]; then
+    #if tmux has-session 2>/dev/null; then
+        ##echo "skip exec tmux attach"
+        #tmux new-session
+    #else
+        #exec tmux
+    #fi
+#fi
+
+#if [[ $(docker-machine active | grep default | wc -l) -eq 0 ]]; then
+    #docker-machine start default
+#fi
+#eval $(docker-machine env)
+
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"

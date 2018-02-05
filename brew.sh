@@ -88,6 +88,7 @@ brew install cmake
 
 #devel
 brew install psqlodbc
+brew install kubectl
 
 # Remove outdated versions from the cellar
 brew cleanup
