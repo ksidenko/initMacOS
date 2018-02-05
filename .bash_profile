@@ -259,13 +259,17 @@ httpHeaders () { /usr/bin/curl -I -L $@ ; }             # httpHeaders:      Grab
     httpDebug () { /usr/bin/curl $@ -o /dev/null -w "dns: %{time_namelookup} connect: %{time_connect} pretransfer: %{time_pretransfer} starttransfer: %{time_starttransfer} total: %{time_total}\n" ; }
 
 
-alias ssh_vm_sks="ssh ubuntu@sks.webapi.ostack.test"
+alias ssh_vm_sks="ssh ubuntu@sks.webapi-dev.os-n3.hw"
 alias goproj="cd ~/golang_project/src/gitlab.2gis.ru/photo/embassy2/"
 
 alias deis='DEIS_PROFILE=dev ~/.config/2gis/deis-client-dev'
 alias deis-prod-n3='DEIS_PROFILE=production-n3 ~/.config/2gis/deis-client-prod-n3'
 alias deis-prod-m1='DEIS_PROFILE=production-m1 ~/.config/2gis/deis-client-prod-m1'
+alias deis-prod-d1='DEIS_PROFILE=production-d1 ~/.config/2gis/deis-client-prod-d1'
 alias deis2='DEIS_PROFILE=v2-staging ~/.config/2gis/deis-client-v2-staging'
+alias deis2-prod-m1='DEIS_PROFILE=v2-production-m1 ~/.config/2gis/deis-client-deis-v2'
+alias deis2-prod-n3='DEIS_PROFILE=v2-production-n3 ~/.config/2gis/deis-client-deis-v2'
+alias deis2-prod-d1='DEIS_PROFILE=v2-production-d1 ~/.config/2gis/deis-client-deis-v2'
 
 alias docker-gc="docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -v /etc:/etc spotify/docker-gc"
 
@@ -284,6 +288,18 @@ alias open-shared-runner-pipeline='open https://gitlab.2gis.ru/webapi/gitlab-ci-
 
 alias docker-env='eval $(docker-machine env)'
 
+alias kube-ugc='kubectl --context="staging-ugc"'
+alias kube-prod-m1-ugc='kubectl --context="production-m1-ugc"'
+alias kube-prod-n3-ugc='kubectl --context="production-n3-ugc"'
+alias kube-prod-d1-ugc='kubectl --context="production-d1-ugc"'
+
+alias kube-webapi='kubectl --context="staging-webapi"'
+alias kube-prod-m1-webapi='kubectl --context="production-m1-webapi"'
+alias kube-prod-n3-webapi='kubectl --context="production-n3-webapi"'
+alias kube-prod-d1-webapi='kubectl --context="production-d1-webapi"'
+
+alias kube-market='kubectl --context="staging-market"'
+
 set -o vi
 
 if [ -f $(brew --prefix)/etc/bash_completion.d ]; then
@@ -293,16 +309,20 @@ if [ -f $(brew --prefix)/etc/bash_completion  ]; then
     . $(brew --prefix)/etc/bash_completion
 fi
 
-if [[ -z "$TMUX" ]]; then
-    if tmux has-session 2>/dev/null; then
-        #echo "skip exec tmux attach"
-        tmux new-session
-    else
-        exec tmux
-    fi
-fi
+source <(kubectl completion bash)
 
-if [[ $(docker-machine active | grep default | wc -l) -eq 0 ]]; then
-    docker-machine start default
-fi
-eval $(docker-machine env)
+#if [[ -z "$TMUX" ]]; then
+    #if tmux has-session 2>/dev/null; then
+        ##echo "skip exec tmux attach"
+        #tmux new-session
+    #else
+        #exec tmux
+    #fi
+#fi
+
+#if [[ $(docker-machine active | grep default | wc -l) -eq 0 ]]; then
+    #docker-machine start default
+#fi
+#eval $(docker-machine env)
+
+export PATH=${PATH}:/User/k.sidenko/platform-tools
