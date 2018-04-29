@@ -271,7 +271,11 @@ alias deis2-prod-m1='DEIS_PROFILE=v2-production-m1 ~/.config/2gis/deis-client-de
 alias deis2-prod-n3='DEIS_PROFILE=v2-production-n3 ~/.config/2gis/deis-client-deis-v2'
 alias deis2-prod-d1='DEIS_PROFILE=v2-production-d1 ~/.config/2gis/deis-client-deis-v2'
 
-alias docker-gc="docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -v /etc:/etc spotify/docker-gc"
+alias docker-gc="docker run --rm \
+    -e FORCE_IMAGE_REMOVAL=1 \
+    -e FORCE_CONTAINER_REMOVAL=1 \
+    -v ~/docker-gc-exclude:/etc/docker-gc-exclude \
+    spotify/docker-gc"
 
 alias dockviz='docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock nate/dockviz'
 alias dockviz-tree='dockviz images -t'
